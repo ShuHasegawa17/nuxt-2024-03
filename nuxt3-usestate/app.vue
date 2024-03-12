@@ -1,6 +1,9 @@
 <script setup lang="ts">
 const titleState = useTitle();
 const { title } = titleState;
+onMounted(() => {
+  titleState.changeTitle('CSR!!');
+});
 </script>
 <template>
   <div>
@@ -9,5 +12,8 @@ const { title } = titleState;
     <button @click="() => titleState.changeTitle('Hello Nuxt3')">
       changeTitle
     </button>
+    <ClientOnly fall-back-tag="div" falback="loading csr render">
+      <NuxtPage />
+    </ClientOnly>
   </div>
 </template>
