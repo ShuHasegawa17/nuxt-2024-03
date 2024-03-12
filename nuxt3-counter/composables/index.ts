@@ -3,8 +3,8 @@ export const useCounter = () => {
   const addCounter = (counter: Ref<number>) => () => {
     counter.value++;
   };
-  const minusCounter = (counter: Ref<number>) => (value: number) => {
-    if (value > 0) counter.value--;
+  const minusCounter = (counter: Ref<number>) => () => {
+    if (counter.value > 0) counter.value--;
   };
   const resetCounter = (counter: Ref<number>) => () => {
     counter.value = 0;
