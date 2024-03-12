@@ -5,8 +5,8 @@ const { counter, addCounter, minusCounter, resetCounter } = useCounter();
   <div>
     <!-- <NuxtWelcome /> -->
     <h1>{{ counter }}</h1>
-    <button @click="() => addCounter()">+</button>
-    <button @click="() => minusCounter(counter)">-</button>
-    <button @click="() => resetCounter()">reset</button>
+    <button @click="addCounter">+</button>
+    <button @click="minusCounter(counter)">-</button>
+    <button @click="resetCounter">reset</button>
   </div>
 </template>
